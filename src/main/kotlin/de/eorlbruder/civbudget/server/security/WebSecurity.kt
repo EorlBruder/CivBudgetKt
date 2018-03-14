@@ -1,6 +1,6 @@
-package de.eorlbruder.civbudget.server.rates.security
+package de.eorlbruder.civbudget.server.security
 
-import de.eorlbruder.civbudget.server.rates.config.SIGN_UP_URL
+import de.eorlbruder.civbudget.server.security.config.SIGN_UP_URL
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpMethod

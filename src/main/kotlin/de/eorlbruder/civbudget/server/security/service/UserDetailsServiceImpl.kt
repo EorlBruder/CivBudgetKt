@@ -1,6 +1,7 @@
-package de.eorlbruder.civbudget.server.rates.service
+package de.eorlbruder.civbudget.server.security.service
 
 import de.eorlbruder.civbudget.server.rates.repository.UserRepository
+import de.eorlbruder.civbudget.server.security.domain.ApplicationUser
 import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
@@ -19,7 +20,7 @@ class UserDetailsServiceImpl(val userRepository: UserRepository) : UserDetailsSe
         return User(user.username, user.password, emptyList())
     }
 
-    fun save(user: de.eorlbruder.civbudget.server.rates.domain.ApplicationUser) {
+    fun save(user: ApplicationUser) {
         userRepository.save(user)
     }
 }

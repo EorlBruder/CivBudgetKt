@@ -1,4 +1,4 @@
-package de.eorlbruder.civbudget.server.rates.domain
+package de.eorlbruder.civbudget.server.security.domain
 
 import org.hibernate.validator.constraints.NotEmpty
 import javax.persistence.Entity

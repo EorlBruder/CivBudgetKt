@@ -1,9 +1,9 @@
-package de.eorlbruder.civbudget.server.rates.security
+package de.eorlbruder.civbudget.server.security
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import de.eorlbruder.civbudget.server.rates.config.EXPIRATION_TIME
-import de.eorlbruder.civbudget.server.rates.config.SECRET
-import de.eorlbruder.civbudget.server.rates.domain.ApplicationUser
+import de.eorlbruder.civbudget.server.security.config.EXPIRATION_TIME
+import de.eorlbruder.civbudget.server.security.config.SECRET
+import de.eorlbruder.civbudget.server.security.domain.ApplicationUser
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.security.authentication.AuthenticationManager

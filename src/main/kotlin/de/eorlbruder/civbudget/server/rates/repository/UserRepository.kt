@@ -1,6 +1,6 @@
 package de.eorlbruder.civbudget.server.rates.repository
 
-import de.eorlbruder.civbudget.server.rates.domain.ApplicationUser
+import de.eorlbruder.civbudget.server.security.domain.ApplicationUser
 import org.springframework.data.repository.CrudRepository
 
 

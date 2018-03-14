@@ -1,8 +1,8 @@
-package de.eorlbruder.civbudget.server.rates.security
+package de.eorlbruder.civbudget.server.security
 
-import de.eorlbruder.civbudget.server.rates.config.HEADER_STRING
-import de.eorlbruder.civbudget.server.rates.config.SECRET
-import de.eorlbruder.civbudget.server.rates.config.TOKEN_PREFIX
+import de.eorlbruder.civbudget.server.security.config.HEADER_STRING
+import de.eorlbruder.civbudget.server.security.config.SECRET
+import de.eorlbruder.civbudget.server.security.config.TOKEN_PREFIX
 import io.jsonwebtoken.Jwts
 import org.springframework.http.HttpHeaders.ORIGIN
 import org.springframework.security.authentication.AuthenticationManager

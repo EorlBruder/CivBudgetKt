@@ -1,4 +1,4 @@
-package de.eorlbruder.civbudget.server.rates
+package de.eorlbruder.civbudget.server
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

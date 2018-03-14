@@ -1,4 +1,4 @@
-package de.eorlbruder.civbudget.server.rates.config
+package de.eorlbruder.civbudget.server.security.config
 
 val LOGIN_URL = "/login"
 val SIGN_UP_URL = "/sign-up"
