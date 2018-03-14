@@ -25,6 +25,8 @@ class WebSecurity(val userDetailsService: UserDetailsService) : WebSecurityConfi
     fun corsFilter(): Filter {
         val source = UrlBasedCorsConfigurationSource()
         val config: CorsConfiguration = CorsConfiguration().applyPermitDefaultValues()
+        config.addAllowedMethod(HttpMethod.DELETE)
+        config.addAllowedMethod(HttpMethod.PUT)
         source.registerCorsConfiguration("/**", config)
         return CorsFilter(source)
     }

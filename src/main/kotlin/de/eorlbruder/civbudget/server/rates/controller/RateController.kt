@@ -1,47 +1,48 @@
 package de.eorlbruder.civbudget.server.rates.controller
 
-import de.eorlbruder.civbudget.server.rates.calculator.RateCalculator
 import de.eorlbruder.civbudget.server.rates.dto.RateDTO
-import de.eorlbruder.civbudget.server.rates.dto.RateMapper
-import de.eorlbruder.civbudget.server.rates.repository.RateRepository
+import de.eorlbruder.civbudget.server.rates.service.RateService
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-class RateController(private val repository: RateRepository) {
+class RateController(private val service: RateService) {
 
-    @GetMapping("/rates")
-    fun findAll()
-            = RateMapper().mapToDtos(repository.findAllByOrderByDailyValue())
 
-    @GetMapping("/rates/id/{id}")
-    fun findById(@PathVariable id: Long)
-            = RateMapper().map(repository.findOne(id))
+    @GetMapping("/rates/list")
+    fun findAll() = service.findAll()
 
-    @PostMapping("/rates/update")
-    fun update(@RequestBody rateDto: RateDTO) {
-        val rate = RateMapper().map(rateDto)
-        val rateCalculator = RateCalculator(rate)
-        rate.dailyValue = rateCalculator.calculate()
-        repository.save(rate)
+
+    @GetMapping("/rates/show/{id}")
+    fun find(@PathVariable id: Long) = service.find(id)
+
+
+    @PostMapping("/rates/add")
+    fun add(@RequestBody rateDto: RateDTO): ResponseEntity<String> {
+        service.save(rateDto)
+        return ResponseEntity("Rate saved successfully", HttpStatus.OK)
     }
 
-    @PostMapping("/rates/delete")
-    fun delete(@RequestBody rateDto: RateDTO) {
-        val rate = RateMapper().map(rateDto)
-        repository.delete(rate)
+    @PutMapping("/rates/update/{id}")
+    fun update(@PathVariable id: Long, @RequestBody rateDto: RateDTO): ResponseEntity<String> {
+        if (service.find(id) == null) {
+            return ResponseEntity("Rate to be updated not found", HttpStatus.NOT_FOUND)
+        }
+        service.save(rateDto)
+        return ResponseEntity("Rate saved successfully", HttpStatus.OK)
+    }
+
+    @DeleteMapping("/rates/delete/{id}")
+    fun delete(@PathVariable id: Long): ResponseEntity<String> {
+        service.delete(id)
+        return ResponseEntity("Rate deleted successfully", HttpStatus.OK)
     }
 
 
     @PostMapping("/rates/recalculate")
-    fun recalculate() {
-        val rates = repository.findAll()
-        for (rate in rates) {
-            val rateCalculator = RateCalculator(rate)
-            val newValue = rateCalculator.calculate()
-            if (newValue != rate.dailyValue) {
-                rate.dailyValue = newValue
-            }
-        }
-        repository.save(rates)
+    fun recalculate(): ResponseEntity<String> {
+        service.recalculate()
+        return ResponseEntity("Successfully recalculated rates", HttpStatus.OK)
     }
 }
