@@ -1,6 +1,5 @@
 package de.eorlbruder.civbudget.server.rates.service
 
-import de.eorlbruder.civbudget.server.rates.calculator.RateCalculator
 import de.eorlbruder.civbudget.server.rates.domain.Rate
 import de.eorlbruder.civbudget.server.rates.dto.RateDTO
 import de.eorlbruder.civbudget.server.rates.dto.RateMapper
@@ -19,8 +18,8 @@ class RateServiceImpl(private val repository: RateRepository) : RateService {
 
     override fun save(rateDto: RateDTO) {
         val rate = RateMapper().map(rateDto)
-        val rateCalculator = RateCalculator(rate)
-        rate.dailyValue = rateCalculator.calculate()
+        // TODO eorlburder 01.04.2018 - call batchjob here!
+        rate.dailyValue = 0.0
         repository.save(rate)
     }
 
@@ -37,8 +36,8 @@ class RateServiceImpl(private val repository: RateRepository) : RateService {
     }
 
     private fun recalcRate(rate: Rate) {
-        val rateCalculator = RateCalculator(rate)
-        val newValue = rateCalculator.calculate()
+        // TODO eorlburder 01.04.2018 - call batchjob here!
+        val newValue = 0.0
         if (newValue != rate.dailyValue) {
             rate.dailyValue = newValue
         }

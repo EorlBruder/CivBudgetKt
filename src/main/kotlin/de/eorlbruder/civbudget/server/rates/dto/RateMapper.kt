@@ -1,7 +1,8 @@
 package de.eorlbruder.civbudget.server.rates.dto
 
-import de.eorlbruder.civbudget.server.rates.domain.Cycle
 import de.eorlbruder.civbudget.server.rates.domain.Rate
+import de.eorlbruder.civbudget.server.rates.enums.Cycle
+
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 

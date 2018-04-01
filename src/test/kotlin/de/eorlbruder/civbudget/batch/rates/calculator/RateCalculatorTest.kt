@@ -1,7 +1,7 @@
-package de.eorlbruder.civbudget.server.rates.calculator
+package de.eorlbruder.civbudget.batch.rates.calculator
 
-import de.eorlbruder.civbudget.server.rates.domain.Cycle
-import de.eorlbruder.civbudget.server.rates.domain.Rate
+import de.eorlbruder.civbudget.batch.domain.Rate
+import de.eorlbruder.civbudget.batch.enums.Cycle
 import org.junit.Assert
 import org.junit.Test
 import java.time.LocalDate

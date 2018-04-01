@@ -1,7 +1,6 @@
-package de.eorlbruder.civbudget.server.rates.domain
+package de.eorlbruder.civbudget.batch.domain
 
-import de.eorlbruder.civbudget.server.rates.enums.Cycle
-import org.hibernate.validator.constraints.NotBlank
+import de.eorlbruder.civbudget.batch.enums.Cycle
 import java.time.LocalDate
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -13,9 +12,6 @@ import javax.validation.constraints.NotNull
 data class Rate(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         val id: Long = -1,
-
-        @get: NotBlank
-        var name: String = "",
 
         @get: NotNull
         var value: Double = 0.0,

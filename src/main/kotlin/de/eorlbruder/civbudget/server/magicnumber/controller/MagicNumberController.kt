@@ -10,6 +10,7 @@ class MagicNumberController(private val service: MagicNumberService) {
 
     @GetMapping("/magic_number")
     fun findCurrent(): Double {
+        // TODO dm 01.04.2018 - or do we want the full object here?
         val currentMagicNumber = service.findCurrent() ?: return 0.0
         return currentMagicNumber.value
 

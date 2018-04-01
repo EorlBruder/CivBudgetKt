@@ -1,4 +1,4 @@
-package de.eorlbruder.civbudget.server.rates.domain
+package de.eorlbruder.civbudget.server.rates.enums
 
 enum class Cycle(val value: Int) {
     YEARLY(12),
