@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 @Service
 class RateServiceImpl(private val repository: RateRepository) : RateService {
 
-    override fun findAll(): Iterable<RateDTO> = RateMapper().mapToDtos(repository.findAllByOrderByDailyValue())
+    override fun findAll(): Iterable<RateDTO> = RateMapper().mapToDTOs(repository.findAllByOrderByDailyValue())
 
     override fun find(id: Long): RateDTO? {
         val rate = repository.findOne(id) ?: return null

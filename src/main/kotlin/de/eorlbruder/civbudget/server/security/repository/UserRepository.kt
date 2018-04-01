@@ -1,4 +1,4 @@
-package de.eorlbruder.civbudget.server.rates.repository
+package de.eorlbruder.civbudget.server.security.repository
 
 import de.eorlbruder.civbudget.server.security.domain.ApplicationUser
 import org.springframework.data.repository.CrudRepository

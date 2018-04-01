@@ -1,7 +1,7 @@
 package de.eorlbruder.civbudget.server.security.service
 
-import de.eorlbruder.civbudget.server.rates.repository.UserRepository
 import de.eorlbruder.civbudget.server.security.domain.ApplicationUser
+import de.eorlbruder.civbudget.server.security.repository.UserRepository
 import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService

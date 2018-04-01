@@ -1,4 +1,4 @@
-package de.eorlbruder.civbudget.server.rates.domain
+package de.eorlbruder.civbudget.server.magicnumber.domain
 
 import org.hibernate.validator.constraints.NotBlank
 import java.time.LocalDate

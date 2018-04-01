@@ -23,9 +23,9 @@ class RateMapper {
         return result
     }
 
-    fun mapToDtos(dtos: Iterable<Rate>): Iterable<RateDTO> {
+    fun mapToDTOs(domains: Iterable<Rate>): Iterable<RateDTO> {
         val result = ArrayList<RateDTO>()
-        dtos.mapTo(result) { map(it) }
+        domains.mapTo(result) { map(it) }
         return result
     }
 }
