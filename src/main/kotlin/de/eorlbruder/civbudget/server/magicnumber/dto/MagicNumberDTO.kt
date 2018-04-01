@@ -11,6 +11,9 @@ data class MagicNumberDTO @JsonCreator constructor(
         @JsonProperty("value")
         var value: Double,
 
+        @JsonProperty("rateValue")
+        var rateValue: Double,
+
         @JsonProperty("calculatedDate")
         var calculatedDate: String
 )

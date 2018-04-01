@@ -17,5 +17,8 @@ data class MagicNumber(
         var value: Double = 0.0,
 
         @get: NotBlank
+        var rateValue: Double = 0.0,
+
+        @get: NotBlank
         var calculatedDate: LocalDate = LocalDate.now()
 )

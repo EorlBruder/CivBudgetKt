@@ -9,11 +9,11 @@ import java.time.format.DateTimeFormatter
 class MagicNumberMapper {
 
     fun map(dto: MagicNumberDTO): MagicNumber {
-        return MagicNumber(dto.id, dto.value, LocalDate.parse(dto.calculatedDate, DateTimeFormatter.ISO_LOCAL_DATE))
+        return MagicNumber(dto.id, dto.value, dto.rateValue, LocalDate.parse(dto.calculatedDate, DateTimeFormatter.ISO_LOCAL_DATE))
     }
 
     fun map(domain: MagicNumber): MagicNumberDTO {
-        return MagicNumberDTO(domain.id, domain.value, domain.calculatedDate.format(DateTimeFormatter.ISO_LOCAL_DATE))
+        return MagicNumberDTO(domain.id, domain.value, domain.rateValue, domain.calculatedDate.format(DateTimeFormatter.ISO_LOCAL_DATE))
     }
 
     fun mapToDomains(dtos: Iterable<MagicNumberDTO>): Iterable<MagicNumber> {
